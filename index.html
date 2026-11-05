@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iglesia Vetero</title>
+<meta name="description" content="Iglesia Vetero Católica en Bogotá, Colombia. Eucaristía, enseñanza de la Palabra y servicio a la comunidad.">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div id="cabecera"></div>
+<main id="contenido">
+
+<section class="portada">
+  <div class="contenedor">
+    <div>
+      <h1>Una iglesia que sirve, enseña y celebra la fe</h1>
+      <p>Somos la Iglesia Vetero Católica en Colombia. Celebramos la Eucaristía, enseñamos la Palabra de Dios y acompañamos a quienes lo necesitan.</p>
+      <div class="botones">
+        <a class="boton" href="que-hacemos.html">Conoce lo que hacemos</a>
+        <a class="boton claro" href="contacto.html">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="sellos">
+      <figure><img src="img/logo-iglesia.png" alt="Logo Iglesia Vetero"><figcaption>Iglesia Vetero</figcaption></figure>
+      <figure><img src="img/logo-mision.png" alt="Logo Corporación La Mi-Sión"><figcaption>Corporación La Mi-Sión</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor dos-columnas">
+    <div class="lectura">
+      <h2>Bienvenidos</h2>
+      <p>Nuestra vocación es el servicio. Nos preparamos para enseñar el camino de la salvación y para vivir una fe cercana, que se nota en la casa, en el trabajo y en la comunidad.</p>
+      <p>La Iglesia está organizada en cuatro prelaturas —Centro, Norte, Oriente y Occidente— con obispos y presbíteros que acompañan a cada comunidad.</p>
+    </div>
+    <div>
+      <h2>Encuéntranos</h2>
+      <p id="resumen-contacto"></p>
+      <div class="botones">
+        <a class="boton" href="integrantes.html">Ver integrantes</a>
+        <a class="boton claro" style="color:var(--azul);border-color:var(--azul)" href="organigrama.html">Ver organigrama</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var c = window.SITIO.contacto;
+    document.getElementById("resumen-contacto").innerHTML =
+      c.capilla + "<br>" + c.direccion + "<br>" + c.barrio + ", " + c.ciudad;
+  });
+</script>
+</main>
+<div id="pie"></div>
+<script src="data/config.js"></script>
+<script src="data/integrantes.js"></script>
+<script src="js/sitio.js"></script>
+</body>
+</html>
