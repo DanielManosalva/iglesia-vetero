@@ -32,8 +32,7 @@ window.INTEGRANTES = [
     orden: "Obispo",
     zona: "Centro",
     cargo: "Máximo representante",
-    foto: "img/integrantes/jimy-bula-giamaria.jpg",
-    encuadre: "center 85%"
+    foto: "img/integrantes/jimy-bula-giamaria.jpg"
   },
   {
     nombre: "Elsy Stella Manosalva Martínez",
@@ -45,7 +44,7 @@ window.INTEGRANTES = [
   /* ---------- Prelatura Centro ---------- */
   {
     nombre: "Leonardo Augusto Romero Ballén",
-    orden: "Proto Presbítero",
+    orden: "Presbítero",
     zona: "Centro",
     foto: "img/integrantes/leonardo-augusto-romero.jpg"
   },
@@ -71,7 +70,7 @@ window.INTEGRANTES = [
   /* ---------- Prelatura Norte ---------- */
   {
     nombre: "Enrique Rubio Fernández",
-    orden: "Monseñor",
+    orden: "Obispo",
     zona: "Norte",
     foto: "img/integrantes/enrique-rubio-fernandez.jpg"
   },
@@ -96,10 +95,10 @@ window.INTEGRANTES = [
     foto: "img/integrantes/orlando-ortiz-guarin.jpg"
   },
   {
-    nombre: "Gregorio Mora",
+    nombre: "Jesús Gregorio Mora Díaz",
     orden: "Presbítero",
     zona: "Oriente",
-    foto: null
+    foto: "img/integrantes/jesus-gregorio-mora.jpg"
   },
 
   /* ---------- Prelatura Occidente ---------- */
@@ -124,7 +123,7 @@ window.INTEGRANTES = [
   },
   {
     nombre: "Luis Antonio Pérez Bohada",
-    orden: "Presbítero",
+    orden: "Obispo",
     zona: "Occidente",
     foto: "img/integrantes/luis-antonio-perez.jpg"
   }

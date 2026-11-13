@@ -16,12 +16,16 @@
   const pagina = location.pathname.split("/").pop() || "index.html";
   const cab = $("#cabecera");
   if (cab) {
+    const tel = S.contacto.telefono;
     cab.innerHTML = `
       <a class="saltar" href="#contenido">Ir al contenido</a>
+      <div class="barra-sup"><div class="contenedor">
+        <span class="direccion">${esc(S.contacto.capilla)} · ${esc(S.contacto.direccion)}, ${esc(S.contacto.ciudad)}</span>
+        <a href="tel:${tel.replace(/\s/g, "")}">${esc(tel)}</a>
+      </div></div>
       <header class="cabecera">
         <div class="contenedor">
-          <a class="marca" href="index.html"><img src="${S.logos.iglesia}" alt="Logo ${esc(S.nombre)}"><strong>${esc(S.nombre)}</strong></a>
-          <a class="marca-aliada" href="${S.logos.corporacionUrl || "index.html"}" title="${esc(S.logos.corporacion)}"><img src="${S.logos.mision}" alt="Logo ${esc(S.logos.corporacion)}"></a>
+          <a class="marca" href="index.html"><img src="${S.logos.iglesia}" alt=""><span><strong>${esc(S.nombre)}</strong><small>Católica en Colombia</small></span></a>
           <button class="menu-boton" aria-expanded="false" aria-controls="nav">Menú</button>
           <nav class="nav" id="nav" aria-label="Principal">
             <ul>${S.menu.map((m) => `<li><a href="${m.url}"${m.url === pagina ? ' aria-current="page"' : ""}>${esc(m.texto)}</a></li>`).join("")}</ul>
@@ -74,6 +78,21 @@
     ? `<img src="${esc(p.foto)}" alt="Foto de ${esc(p.nombre)}" loading="lazy"${p.encuadre ? ` style="object-position:${esc(p.encuadre)}"` : ""}>`
     : `<div class="iniciales" aria-hidden="true">${esc(iniciales(p.nombre))}</div>`;
   const tipo = (p) => clave(p.orden) === "obispo" ? "obispo" : clave(p.orden) === "monsenor" ? "monsenor" : "";
+
+  /* ---------- Inicio: representante ---------- */
+  const rep = $("#representante");
+  if (rep) {
+    const p = buscar(S.representante);
+    if (p) rep.innerHTML = `
+      <figure>${foto(p)}</figure>
+      <div>
+        <span class="rotulo">Máximo representante</span>
+        <h2>Mons. ${esc(p.nombre)}</h2>
+        <p class="cargo">${esc(p.orden)} · Prelatura ${esc(p.zona)}</p>
+        <p class="lectura">Acompaña a las cuatro prelaturas de la Iglesia junto con los obispos y presbíteros de cada comunidad.</p>
+        <div class="enlaces"><a class="enlace" href="organigrama.html">Ver organigrama</a><a class="enlace" href="integrantes.html">Conocer a los integrantes</a></div>
+      </div>`;
+  }
 
   /* ---------- Página Integrantes ---------- */
   const lista = $("#lista-integrantes");

@@ -8,7 +8,7 @@
 <link rel="icon" href="img/icono.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -18,42 +18,57 @@
 <section class="portada">
   <div class="contenedor">
     <div>
+      <span class="rotulo">Iglesia Vetero Católica · Bogotá</span>
       <h1>Una iglesia que sirve, enseña y celebra la fe</h1>
-      <p>Somos la Iglesia Vetero Católica en Colombia. Celebramos la Eucaristía, enseñamos la Palabra de Dios y acompañamos a quienes lo necesitan.</p>
-      <div class="botones">
-        <a class="boton" href="que-hacemos.html">Conoce lo que hacemos</a>
-        <a class="boton claro" href="contacto.html">Cómo llegar</a>
+      <div class="filete"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M4 0h2v3h3v2H6v5H4V5H1V3h3z"/></svg></div>
+      <p class="entrada">Celebramos la Eucaristía, enseñamos la Palabra de Dios y acompañamos a quienes lo necesitan, en la casa, en el trabajo y en la comunidad.</p>
+      <div class="enlaces">
+        <a class="enlace" href="que-hacemos.html">Lo que hacemos</a>
+        <a class="enlace" href="contacto.html">Cómo llegar</a>
       </div>
     </div>
-    <div class="sellos">
-      <figure><img src="img/logo-iglesia.png" alt="Logo Iglesia Vetero"><figcaption>Iglesia Vetero</figcaption></figure>
-      <figure><img src="img/logo-mision.png" alt="Logo Corporación La Mi-Sión"><figcaption>Corporación La Mi-Sión</figcaption></figure>
+    <div class="escudo">
+      <img src="img/logo-iglesia.png" alt="Escudo de la Iglesia Vetero">
+      <p>Con la Corporación La Mi-Sión</p>
     </div>
   </div>
+</section>
+
+<section class="franja" aria-label="Datos de la capilla">
+  <div class="contenedor" id="franja"></div>
 </section>
 
 <section class="seccion">
   <div class="contenedor dos-columnas">
     <div class="lectura">
-      <h2>Bienvenidos</h2>
-      <p>Nuestra vocación es el servicio. Nos preparamos para enseñar el camino de la salvación y para vivir una fe cercana, que se nota en la casa, en el trabajo y en la comunidad.</p>
+      <span class="rotulo">Bienvenidos</span>
+      <h2>Nuestra vocación es el servicio</h2>
+      <p>Nos preparamos para enseñar el camino de la salvación y para vivir una fe cercana, que se nota en lo cotidiano.</p>
       <p>La Iglesia está organizada en cuatro prelaturas —Centro, Norte, Oriente y Occidente— con obispos y presbíteros que acompañan a cada comunidad.</p>
     </div>
     <div>
-      <h2>Encuéntranos</h2>
-      <p id="resumen-contacto"></p>
-      <div class="botones">
-        <a class="boton" href="integrantes.html">Ver integrantes</a>
-        <a class="boton claro" style="color:var(--azul);border-color:var(--azul)" href="organigrama.html">Ver organigrama</a>
-      </div>
+      <span class="rotulo">En la comunidad</span>
+      <ul class="lista-cruz">
+        <li>Celebramos la Santa Eucaristía.</li>
+        <li>Enseñamos la Palabra de Dios.</li>
+        <li>Formamos grupos de oración.</li>
+        <li>Ayudamos a los más necesitados.</li>
+      </ul>
     </div>
   </div>
 </section>
+
+<section class="seccion alterna">
+  <div class="contenedor destacado" id="representante"></div>
+</section>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     var c = window.SITIO.contacto;
-    document.getElementById("resumen-contacto").innerHTML =
-      c.capilla + "<br>" + c.direccion + "<br>" + c.barrio + ", " + c.ciudad;
+    document.getElementById("franja").innerHTML =
+      '<div><span class="rotulo">Capilla</span><p>' + c.capilla + '</p></div>' +
+      '<div><span class="rotulo">Dirección</span><p>' + c.direccion + '<br>' + c.barrio + '</p></div>' +
+      '<div><span class="rotulo">Teléfono</span><p><a href="tel:' + c.telefono.replace(/\s/g, "") + '">' + c.telefono + '</a></p></div>';
   });
 </script>
 </main>
